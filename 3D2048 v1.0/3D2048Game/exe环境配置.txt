@@ -1,0 +1,1 @@
+将.dll文件放在C:Windows\SysWOW64下即可

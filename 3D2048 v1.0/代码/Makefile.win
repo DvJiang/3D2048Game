@@ -1,0 +1,31 @@
+# Project: Game2048
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = GameMain.o gameSDK.o
+LINKOBJ  = GameMain.o gameSDK.o
+LIBS     = -L"D:/Users/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -lglut32 -lopengl32 -lglu32 -lgdi32 -lwinmm -mwindows -m32
+INCS     = -I"D:/Users/Dev-Cpp/MinGW64/include" -I"D:/Users/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Users/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/Users/Dev-Cpp/MinGW64/include" -I"D:/Users/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Users/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/Users/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Game2048.exe
+CXXFLAGS = $(CXXINCS) -m32
+CFLAGS   = $(INCS) -m32
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+GameMain.o: GameMain.cpp
+	$(CPP) -c GameMain.cpp -o GameMain.o $(CXXFLAGS)
+
+gameSDK.o: gameSDK.cpp
+	$(CPP) -c gameSDK.cpp -o gameSDK.o $(CXXFLAGS)
