@@ -1,6 +1,6 @@
 
 
-> 更多介绍放在我的博客中：dvjiang.github.io
+> 更多介绍放在我的博客中：https://dvjiang.github.io/2022/06/24/%E7%94%A8OpenGL%E5%AE%9E%E7%8E%B03D2048%E6%B8%B8%E6%88%8F/
 
 ## 程序概况
 
